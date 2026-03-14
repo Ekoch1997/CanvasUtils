@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Canvas Utilities",
+  "version": "0.1",
+  "description": "Modular utilities for manipulating page elements.",
+  "permissions": ["activeTab", "storage"],
+  "icons": {
+    "16": "canvas_instructure.png",
+    "48": "canvas_instructure.png",
+    "128": "canvas_instructure.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Canvas Utilities",
+    "default_icon": {
+      "16": "canvas_instructure.png",
+      "48": "canvas_instructure.png",
+      "128": "canvas_instructure.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

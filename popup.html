@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="canvas_instructure.png" sizes="128x128">
+    <title>Canvas Utilities</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="popup-header">
+        <img src="canvas_instructure.png" class="logo" alt="logo">
+        <div class="title">Canvas Utilities</div>
+      </header>
+      <div class="card">
+        <div class="row toggle-row">
+          <label for="wrap-toggle">Wrap text boxes</label>
+          <label class="switch">
+            <input id="wrap-toggle" type="checkbox" aria-label="Wrap text boxes toggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div id="status" class="status"></div>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
