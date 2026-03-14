@@ -23,6 +23,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }, 8000);
 
+      // Inject content script on-demand (requires "scripting" permission)
+      try {
+        await chrome.scripting.executeScript({
+          target: { tabId: tabs[0].id },
+          files: ['content.js']
+        });
+      } catch (e) {
+        // injection may fail silently (e.g., restricted page); we'll still attempt to send the message
+      }
+
       chrome.tabs.sendMessage(tabs[0].id, {type: 'runTool', tool}, (resp) => {
         if (settled) return;
         settled = true;
